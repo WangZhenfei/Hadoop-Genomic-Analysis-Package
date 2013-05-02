@@ -1,0 +1,75 @@
+# Running the Jar locally
+#java -cp WordCount.jar tutorial.sample.WordCount
+java -jar WordCount.jar
+
+#Install Hadoop and settings
+Follow http://hadoop.apache.org/docs/stable/single_node_setup.html
+Had to change System Preferences -> Sharing -> Tick 'Remote Login' (Mac specific)
+Examine the ${HADOOP_HOME}/conf/slaves file - each entry in here needs to be in the /etc/hosts file for each node in your cluster, or you must have them in your networks DNS server
+Add to /etc/hosts this line: "192.168.0.13    node1"  (sudo vi)
+Restart the machine
+
+
+#Restarting Hadoop Server:
+/Applications/hadoop-1.1.2/bin/stop-all.sh
+/Applications/hadoop-1.1.2/bin/hadoop namenode -format
+/Applications/hadoop-1.1.2/bin/start-all.sh
+
+
+
+/Applications/hadoop-1.1.2/bin/hadoop job -list
+/Applications/hadoop-1.1.2/bin/hadoop job -kill job_201304181659_0021
+
+/Applications/hadoop-1.1.2/bin/hadoop fs -mkdir /user/in
+/Applications/hadoop-1.1.2/bin/hadoop fs -ls /user/in
+/Applications/hadoop-1.1.2/bin/hadoop fs -put ~/Downloads/test.txt /user/in
+/Applications/hadoop-1.1.2/bin/hadoop fs -put ~/Downloads/test2.txt /user/in
+
+
+
+#/Applications/hadoop-1.1.2/bin/hadoop fs -put /Volumes/NO\ NAME/vcf_GWASeq/RD-16165.SNPs_Annotated.vcf /user/in
+/Applications/hadoop-1.1.2/bin/hadoop fs -rmr /user/out    # Have to delete after every run
+# Takes all the files in the folder as a collective. If want to analyze file by file, then specific the file in input
+/Applications/hadoop-1.1.2/bin/hadoop jar /Users/sibonli/IdeaProjects/CRC-Hadoop/out/artifacts/CalculateTiTv/CalculateTiTv.jar "/user/in" "/user/out"
+/Applications/hadoop-1.1.2/bin/hadoop fs -copyToLocal /user/out/* .
+vi part-r-00000
+
+
+
+#Allele Frequency
+/Applications/hadoop-1.1.2/bin/hadoop fs -rmr /user/in
+/Applications/hadoop-1.1.2/bin/hadoop fs -mkdir /user/in
+/Applications/hadoop-1.1.2/bin/hadoop fs -put /Volumes/NO\ NAME/vcf_GWASeq/*.vcf /user/in
+/Applications/hadoop-1.1.2/bin/hadoop fs -rmr /user/out
+
+
+
+#Hadoop-Bam
+#Basic Hadoop-Bam
+/Applications/hadoop-1.1.2/bin/hadoop fs -put /Volumes/NO\ NAME/vcf_GWASeq/HG00173.unmapped.ILLUMINA.bwa.FIN.low_coverage.20120522.bam /user/hadoop-bam/in/HG00173.unmapped.ILLUMINA.bwa.FIN.low_coverage.20120522.bam
+/Applications/hadoop-1.1.2/bin/hadoop jar /Users/sibonli/IdeaProjects/CRC-Hadoop/out/artifacts/CalculateTiTv/CalculateTiTv.jar sort "/user/hadoop-bam/out" "/user/hadoop-bam/in/HG00173.unmapped.ILLUMINA.bwa.FIN.low_coverage.20120522.bam"
+#/Applications/hadoop-1.1.2/bin/hadoop jar /Users/sibonli/Downloads/hadoop-bam-5.1/hadoop-bam.jar -libjars "/Users/sibonli/Downloads/hadoop-bam-5.1/sam-1.76.jar,/Users/sibonli/Downloads/hadoop-bam-5.1/picard-1.76.jar" sort "/user/hadoop-bam/out" "/user/hadoop-bam/in/HG00173.unmapped.ILLUMINA.bwa.FIN.low_coverage.20120522.bam"
+/Applications/hadoop-1.1.2/bin/hadoop fs -copyToLocal /user/hadoop-bam/out/* .
+
+# My Hadoop-Bam applications
+/Applications/hadoop-1.1.2/bin/hadoop fs -rmr /user/hadoop-bam/out
+/Applications/hadoop-1.1.2/bin/hadoop fs -rmr /user/hadoop-bam/in
+/Applications/hadoop-1.1.2/bin/hadoop jar /Users/sibonli/IdeaProjects/CRC-Hadoop/out/artifacts/CalculateTiTv/CalculateTiTv.jar main.bam.SimpleBamOperation -libjars "/Users/sibonli/IdeaProjects/CRC-Hadoop/lib/hadoop-bam-5.1.jar" "/user/hadoop-bam/in/HG00173.unmapped.ILLUMINA.bwa.FIN.low_coverage.20120522.bam" "/user/hadoop-bam/out"
+/Applications/hadoop-1.1.2/bin/hadoop jar /Users/sibonli/IdeaProjects/CRC-Hadoop/out/artifacts/CalculateTiTv/CalculateTiTv.jar "/user/hadoop-bam/in/HG00173.unmapped.ILLUMINA.bwa.FIN.low_coverage.20120522.bam" "/user/hadoop-bam/out"
+
+
+
+/Applications/hadoop-1.1.2/bin/hadoop jar /Users/sibonli/IdeaProjects/CRC-Hadoop/out/artifacts/CalculateTiTv/CalculateTiTv.jar -libjars "/Users/sibonli/IdeaProjects/CRC-Hadoop/lib/picard-1.76.jar,/Users/sibonli/IdeaProjects/CRC-Hadoop/lib/sam-1.76.jar,/Users/sibonli/IdeaProjects/CRC-Hadoop/lib/hadoop-bam-5.1.jar" "/user/hadoop-bam/in/HG00173.unmapped.ILLUMINA.bwa.FIN.low_coverage.20120522.bam" "/user/hadoop-bam/out"
+
+#This works for SimpleBamOperation:
+/Applications/hadoop-1.1.2/bin/hadoop jar /Users/sibonli/IdeaProjects/CRC-Hadoop/out/artifacts/CalculateTiTv/CalculateTiTv.jar "/user/hadoop-bam/in/HG00173.unmapped.ILLUMINA.bwa.FIN.low_coverage.20120522.bam" "/user/hadoop-bam/out"
+/Applications/hadoop-1.1.2/bin/hadoop fs -copyToLocal /user/hadoop-bam/out* .
+
+
+
+
+/Applications/hadoop-1.1.2/bin/hadoop jar /Users/sibonli/IdeaProjects/Hadoop-Genomic-Analysis-Package/out/artifacts/CalculateTiTv.jar -libjars "/Users/sibonli/IdeaProjects/CRC-Hadoop/lib/picard-1.76.jar,/Users/sibonli/IdeaProjects/CRC-Hadoop/lib/sam-1.76.jar,/Users/sibonli/IdeaProjects/CRC-Hadoop/lib/hadoop-bam-5.1.jar" "/user/hadoop-bam/in/HG00173.unmapped.ILLUMINA.bwa.FIN.low_coverage.20120522.bam" "/user/hadoop-bam/out"
+
+#This works for SimpleBamOperation:
+/Applications/hadoop-1.1.2/bin/hadoop jar /Users/sibonli/IdeaProjects/Hadoop-Genomic-Analysis-Package/out/artifacts/CalculateTiTv/CalculateTiTv.jar "/user/hadoop-bam/in/HG00173.unmapped.ILLUMINA.bwa.FIN.low_coverage.20120522.bam" "/user/hadoop-bam/out"
+/Applications/hadoop-1.1.2/bin/hadoop fs -copyToLocal /user/hadoop-bam/out* .

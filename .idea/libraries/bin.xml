@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="bin">
+    <CLASSES>
+      <root url="file:///Applications/hadoop-1.1.2/bin" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
