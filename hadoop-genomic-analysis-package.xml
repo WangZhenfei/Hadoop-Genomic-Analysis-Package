@@ -2,7 +2,7 @@
 <project name="hadoop-genome" default="all">
 
 
-    <property file="crc-hadoop.properties"/>
+    <property file="hadoop-genomic-analysis-package.properties"/>
     <!-- Uncomment the following property if no tests compilation is needed -->
     <!--
    <property name="skip.tests" value="true"/>
@@ -130,52 +130,52 @@
     <!-- Modules -->
 
 
-    <!-- Module CRC-Hadoop -->
+    <!-- Module Hadoop-Genomic-Analysis-Package -->
 
-    <dirname property="module.crc-hadoop.basedir" file="${ant.file}"/>
+    <dirname property="module.hadoop-genomic-analysis-package.basedir" file="${ant.file}"/>
 
 
-    <property name="module.jdk.home.crc-hadoop" value="${project.jdk.home}"/>
-    <property name="module.jdk.bin.crc-hadoop" value="${project.jdk.bin}"/>
-    <property name="module.jdk.classpath.crc-hadoop" value="${project.jdk.classpath}"/>
+    <property name="module.jdk.home.hadoop-genomic-analysis-package" value="${project.jdk.home}"/>
+    <property name="module.jdk.bin.hadoop-genomic-analysis-package" value="${project.jdk.bin}"/>
+    <property name="module.jdk.classpath.hadoop-genomic-analysis-package" value="${project.jdk.classpath}"/>
 
-    <property name="compiler.args.crc-hadoop" value="${compiler.args}"/>
+    <property name="compiler.args.hadoop-genomic-analysis-package" value="${compiler.args}"/>
 
-    <property name="crc-hadoop.output.dir" value="${module.crc-hadoop.basedir}/out/production/CRC-Hadoop"/>
-    <property name="crc-hadoop.testoutput.dir" value="${module.crc-hadoop.basedir}/out/test/CRC-Hadoop"/>
+    <property name="hadoop-genomic-analysis-package.output.dir" value="${module.hadoop-genomic-analysis-package.basedir}/out/production/Hadoop-Genomic-Analysis-Package"/>
+    <property name="hadoop-genomic-analysis-package.testoutput.dir" value="${module.hadoop-genomic-analysis-package.basedir}/out/test/Hadoop-Genomic-Analysis-Package"/>
 
-    <path id="crc-hadoop.module.bootclasspath">
+    <path id="hadoop-genomic-analysis-package.module.bootclasspath">
         <!-- Paths to be included in compilation bootclasspath -->
     </path>
 
-    <path id="crc-hadoop.module.production.classpath">
-        <path refid="${module.jdk.classpath.crc-hadoop}"/>
+    <path id="hadoop-genomic-analysis-package.module.production.classpath">
+        <path refid="${module.jdk.classpath.hadoop-genomic-analysis-package}"/>
         <pathelement location="${idea.home}/lib/junit-4.10.jar"/>
         <path refid="library.lib.classpath"/>
         <path refid="library.lib1.classpath"/>
         <path refid="library.hadoop-ant-1.1.2.classpath"/>
     </path>
 
-    <path id="crc-hadoop.runtime.production.module.classpath">
-        <pathelement location="${crc-hadoop.output.dir}"/>
+    <path id="hadoop-genomic-analysis-package.runtime.production.module.classpath">
+        <pathelement location="${hadoop-genomic-analysis-package.output.dir}"/>
         <pathelement location="${idea.home}/lib/junit-4.10.jar"/>
         <path refid="library.lib.classpath"/>
         <path refid="library.lib1.classpath"/>
         <path refid="library.hadoop-ant-1.1.2.classpath"/>
     </path>
 
-    <path id="crc-hadoop.module.classpath">
-        <path refid="${module.jdk.classpath.crc-hadoop}"/>
-        <pathelement location="${crc-hadoop.output.dir}"/>
+    <path id="hadoop-genomic-analysis-package.module.classpath">
+        <path refid="${module.jdk.classpath.hadoop-genomic-analysis-package}"/>
+        <pathelement location="${hadoop-genomic-analysis-package.output.dir}"/>
         <pathelement location="${idea.home}/lib/junit-4.10.jar"/>
         <path refid="library.lib.classpath"/>
         <path refid="library.lib1.classpath"/>
         <path refid="library.hadoop-ant-1.1.2.classpath"/>
     </path>
 
-    <path id="crc-hadoop.runtime.module.classpath">
-        <pathelement location="${crc-hadoop.testoutput.dir}"/>
-        <pathelement location="${crc-hadoop.output.dir}"/>
+    <path id="hadoop-genomic-analysis-package.runtime.module.classpath">
+        <pathelement location="${hadoop-genomic-analysis-package.testoutput.dir}"/>
+        <pathelement location="${hadoop-genomic-analysis-package.output.dir}"/>
         <pathelement location="${idea.home}/lib/junit-4.10.jar"/>
         <path refid="library.lib.classpath"/>
         <path refid="library.lib1.classpath"/>
@@ -183,55 +183,55 @@
     </path>
 
 
-    <patternset id="excluded.from.module.crc-hadoop">
+    <patternset id="excluded.from.module.hadoop-genomic-analysis-package">
         <patternset refid="ignored.files"/>
     </patternset>
 
-    <patternset id="excluded.from.compilation.crc-hadoop">
-        <patternset refid="excluded.from.module.crc-hadoop"/>
+    <patternset id="excluded.from.compilation.hadoop-genomic-analysis-package">
+        <patternset refid="excluded.from.module.hadoop-genomic-analysis-package"/>
     </patternset>
 
-    <path id="crc-hadoop.module.sourcepath">
-        <dirset dir="${module.crc-hadoop.basedir}">
+    <path id="hadoop-genomic-analysis-package.module.sourcepath">
+        <dirset dir="${module.hadoop-genomic-analysis-package.basedir}">
             <include name="src"/>
         </dirset>
     </path>
 
 
-    <target name="compile.module.crc-hadoop" depends="compile.module.crc-hadoop.production,compile.module.crc-hadoop.tests" description="Compile module CRC-Hadoop"/>
+    <target name="compile.module.hadoop-genomic-analysis-package" depends="compile.module.hadoop-genomic-analysis-package.production,compile.module.hadoop-genomic-analysis-package.tests" description="Compile module Hadoop-Genomic-Analysis-Package"/>
 
-    <target name="compile.module.crc-hadoop.production" depends="register.custom.compilers" description="Compile module CRC-Hadoop; production classes">
-        <mkdir dir="${crc-hadoop.output.dir}"/>
-        <javac2 destdir="${crc-hadoop.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.crc-hadoop}/javac">
-            <compilerarg line="${compiler.args.crc-hadoop}"/>
-            <bootclasspath refid="crc-hadoop.module.bootclasspath"/>
-            <classpath refid="crc-hadoop.module.production.classpath"/>
-            <src refid="crc-hadoop.module.sourcepath"/>
-            <patternset refid="excluded.from.compilation.crc-hadoop"/>
+    <target name="compile.module.hadoop-genomic-analysis-package.production" depends="register.custom.compilers" description="Compile module Hadoop-Genomic-Analysis-Package; production classes">
+        <mkdir dir="${hadoop-genomic-analysis-package.output.dir}"/>
+        <javac2 destdir="${hadoop-genomic-analysis-package.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.hadoop-genomic-analysis-package}/javac">
+            <compilerarg line="${compiler.args.hadoop-genomic-analysis-package}"/>
+            <bootclasspath refid="hadoop-genomic-analysis-package.module.bootclasspath"/>
+            <classpath refid="hadoop-genomic-analysis-package.module.production.classpath"/>
+            <src refid="hadoop-genomic-analysis-package.module.sourcepath"/>
+            <patternset refid="excluded.from.compilation.hadoop-genomic-analysis-package"/>
         </javac2>
 
-        <copy todir="${crc-hadoop.output.dir}">
-            <fileset dir="${module.crc-hadoop.basedir}/src">
+        <copy todir="${hadoop-genomic-analysis-package.output.dir}">
+            <fileset dir="${module.hadoop-genomic-analysis-package.basedir}/src">
                 <patternset refid="compiler.resources"/>
                 <type type="file"/>
             </fileset>
         </copy>
     </target>
 
-    <target name="compile.module.crc-hadoop.tests" depends="register.custom.compilers,compile.module.crc-hadoop.production" description="compile module CRC-Hadoop; test classes" unless="skip.tests"/>
+    <target name="compile.module.hadoop-genomic-analysis-package.tests" depends="register.custom.compilers,compile.module.hadoop-genomic-analysis-package.production" description="compile module Hadoop-Genomic-Analysis-Package; test classes" unless="skip.tests"/>
 
-    <target name="clean.module.crc-hadoop" description="cleanup module">
-        <delete dir="${crc-hadoop.output.dir}"/>
-        <delete dir="${crc-hadoop.testoutput.dir}"/>
+    <target name="clean.module.hadoop-genomic-analysis-package" description="cleanup module">
+        <delete dir="${hadoop-genomic-analysis-package.output.dir}"/>
+        <delete dir="${hadoop-genomic-analysis-package.testoutput.dir}"/>
     </target>
 
     <target name="init" description="Build initialization">
         <!-- Perform any build initialization in this target -->
     </target>
 
-    <target name="clean" depends="clean.module.crc-hadoop" description="cleanup all"/>
+    <target name="clean" depends="clean.module.hadoop-genomic-analysis-package" description="cleanup all"/>
 
-    <target name="build.modules" depends="init, clean, compile.module.crc-hadoop" description="build all modules"/>
+    <target name="build.modules" depends="init, clean, compile.module.hadoop-genomic-analysis-package" description="build all modules"/>
 
     <target name="init.artifacts">
         <property name="artifacts.temp.dir" value="${basedir}/__artifacts_temp"/>
@@ -240,19 +240,19 @@
         <property name="temp.jar.path.CalculateTiTv.jar" value="${artifacts.temp.dir}/CalculateTiTv.jar"/>
     </target>
 
-    <target name="artifact.calculatetitv" depends="init.artifacts, compile.module.crc-hadoop" description="Build &#39;CalculateTiTv&#39; artifact">
+    <target name="artifact.calculatetitv" depends="init.artifacts, compile.module.hadoop-genomic-analysis-package" description="Build &#39;CalculateTiTv&#39; artifact">
         <property name="artifact.temp.output.calculatetitv" value="${artifacts.temp.dir}/CalculateTiTv"/>
         <mkdir dir="${artifact.temp.output.calculatetitv}"/>
         <jar destfile="${temp.jar.path.CalculateTiTv.jar}" duplicate="preserve" filesetmanifest="mergewithoutmain">
             <zipfileset file="${basedir}/META-INF/MANIFEST.MF" prefix="META-INF"/>
             <zipfileset file="${idea.home}/lib/junit-4.10.jar"/>
-            <zipfileset dir="${crc-hadoop.output.dir}"/>
+            <zipfileset dir="${hadoop-genomic-analysis-package.output.dir}"/>
             <!--<zipfileset -->
             <manifest>
                 <attribute name="Main-Class" value="main.bam.SimpleBamOperation" />
             </manifest>
             <zipgroupfileset dir="${lib}" includes="hadoop-bam-5.1.jar"/>
-            <!--<zipgroupfileset dir="/Users/sibonli/IdeaProjects/CRC-Hadoop/lib" includes="hadoop-bam-5.1.jar"/>-->
+            <!--<zipgroupfileset dir="/Users/sibonli/IdeaProjects/Hadoop-Genomic-Analysis-Package/lib" includes="hadoop-bam-5.1.jar"/>-->
         </jar>
         <copy file="${temp.jar.path.CalculateTiTv.jar}" tofile="${artifact.temp.output.calculatetitv}/CalculateTiTv.jar"/>
     </target>

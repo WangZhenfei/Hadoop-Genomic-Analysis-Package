@@ -30,7 +30,7 @@ Restart the machine
 #/Applications/hadoop-1.1.2/bin/hadoop fs -put /Volumes/NO\ NAME/vcf_GWASeq/RD-16165.SNPs_Annotated.vcf /user/in
 /Applications/hadoop-1.1.2/bin/hadoop fs -rmr /user/out    # Have to delete after every run
 # Takes all the files in the folder as a collective. If want to analyze file by file, then specific the file in input
-/Applications/hadoop-1.1.2/bin/hadoop jar /Users/sibonli/IdeaProjects/CRC-Hadoop/out/artifacts/CalculateTiTv/CalculateTiTv.jar "/user/in" "/user/out"
+/Applications/hadoop-1.1.2/bin/hadoop jar /Users/sibonli/IdeaProjects/Hadoop-Genomic-Analysis-Package/out/artifacts/CalculateTiTv/CalculateTiTv.jar "/user/in" "/user/out"
 /Applications/hadoop-1.1.2/bin/hadoop fs -copyToLocal /user/out/* .
 vi part-r-00000
 
@@ -47,28 +47,28 @@ vi part-r-00000
 #Hadoop-Bam
 #Basic Hadoop-Bam
 /Applications/hadoop-1.1.2/bin/hadoop fs -put /Volumes/NO\ NAME/vcf_GWASeq/HG00173.unmapped.ILLUMINA.bwa.FIN.low_coverage.20120522.bam /user/hadoop-bam/in/HG00173.unmapped.ILLUMINA.bwa.FIN.low_coverage.20120522.bam
-/Applications/hadoop-1.1.2/bin/hadoop jar /Users/sibonli/IdeaProjects/CRC-Hadoop/out/artifacts/CalculateTiTv/CalculateTiTv.jar sort "/user/hadoop-bam/out" "/user/hadoop-bam/in/HG00173.unmapped.ILLUMINA.bwa.FIN.low_coverage.20120522.bam"
+/Applications/hadoop-1.1.2/bin/hadoop jar /Users/sibonli/IdeaProjects/Hadoop-Genomic-Analysis-Package/out/artifacts/CalculateTiTv/CalculateTiTv.jar sort "/user/hadoop-bam/out" "/user/hadoop-bam/in/HG00173.unmapped.ILLUMINA.bwa.FIN.low_coverage.20120522.bam"
 #/Applications/hadoop-1.1.2/bin/hadoop jar /Users/sibonli/Downloads/hadoop-bam-5.1/hadoop-bam.jar -libjars "/Users/sibonli/Downloads/hadoop-bam-5.1/sam-1.76.jar,/Users/sibonli/Downloads/hadoop-bam-5.1/picard-1.76.jar" sort "/user/hadoop-bam/out" "/user/hadoop-bam/in/HG00173.unmapped.ILLUMINA.bwa.FIN.low_coverage.20120522.bam"
 /Applications/hadoop-1.1.2/bin/hadoop fs -copyToLocal /user/hadoop-bam/out/* .
 
 # My Hadoop-Bam applications
 /Applications/hadoop-1.1.2/bin/hadoop fs -rmr /user/hadoop-bam/out
 /Applications/hadoop-1.1.2/bin/hadoop fs -rmr /user/hadoop-bam/in
-/Applications/hadoop-1.1.2/bin/hadoop jar /Users/sibonli/IdeaProjects/CRC-Hadoop/out/artifacts/CalculateTiTv/CalculateTiTv.jar main.bam.SimpleBamOperation -libjars "/Users/sibonli/IdeaProjects/CRC-Hadoop/lib/hadoop-bam-5.1.jar" "/user/hadoop-bam/in/HG00173.unmapped.ILLUMINA.bwa.FIN.low_coverage.20120522.bam" "/user/hadoop-bam/out"
-/Applications/hadoop-1.1.2/bin/hadoop jar /Users/sibonli/IdeaProjects/CRC-Hadoop/out/artifacts/CalculateTiTv/CalculateTiTv.jar "/user/hadoop-bam/in/HG00173.unmapped.ILLUMINA.bwa.FIN.low_coverage.20120522.bam" "/user/hadoop-bam/out"
+/Applications/hadoop-1.1.2/bin/hadoop jar /Users/sibonli/IdeaProjects/Hadoop-Genomic-Analysis-Package/out/artifacts/CalculateTiTv/CalculateTiTv.jar main.bam.SimpleBamOperation -libjars "/Users/sibonli/IdeaProjects/Hadoop-Genomic-Analysis-Package/lib/hadoop-bam-5.1.jar" "/user/hadoop-bam/in/HG00173.unmapped.ILLUMINA.bwa.FIN.low_coverage.20120522.bam" "/user/hadoop-bam/out"
+/Applications/hadoop-1.1.2/bin/hadoop jar /Users/sibonli/IdeaProjects/Hadoop-Genomic-Analysis-Package/out/artifacts/CalculateTiTv/CalculateTiTv.jar "/user/hadoop-bam/in/HG00173.unmapped.ILLUMINA.bwa.FIN.low_coverage.20120522.bam" "/user/hadoop-bam/out"
 
 
 
-/Applications/hadoop-1.1.2/bin/hadoop jar /Users/sibonli/IdeaProjects/CRC-Hadoop/out/artifacts/CalculateTiTv/CalculateTiTv.jar -libjars "/Users/sibonli/IdeaProjects/CRC-Hadoop/lib/picard-1.76.jar,/Users/sibonli/IdeaProjects/CRC-Hadoop/lib/sam-1.76.jar,/Users/sibonli/IdeaProjects/CRC-Hadoop/lib/hadoop-bam-5.1.jar" "/user/hadoop-bam/in/HG00173.unmapped.ILLUMINA.bwa.FIN.low_coverage.20120522.bam" "/user/hadoop-bam/out"
+/Applications/hadoop-1.1.2/bin/hadoop jar /Users/sibonli/IdeaProjects/Hadoop-Genomic-Analysis-Package/out/artifacts/CalculateTiTv/CalculateTiTv.jar -libjars "/Users/sibonli/IdeaProjects/Hadoop-Genomic-Analysis-Package/lib/picard-1.76.jar,/Users/sibonli/IdeaProjects/Hadoop-Genomic-Analysis-Package/lib/sam-1.76.jar,/Users/sibonli/IdeaProjects/Hadoop-Genomic-Analysis-Package/lib/hadoop-bam-5.1.jar" "/user/hadoop-bam/in/HG00173.unmapped.ILLUMINA.bwa.FIN.low_coverage.20120522.bam" "/user/hadoop-bam/out"
 
 #This works for SimpleBamOperation:
-/Applications/hadoop-1.1.2/bin/hadoop jar /Users/sibonli/IdeaProjects/CRC-Hadoop/out/artifacts/CalculateTiTv/CalculateTiTv.jar "/user/hadoop-bam/in/HG00173.unmapped.ILLUMINA.bwa.FIN.low_coverage.20120522.bam" "/user/hadoop-bam/out"
+/Applications/hadoop-1.1.2/bin/hadoop jar /Users/sibonli/IdeaProjects/Hadoop-Genomic-Analysis-Package/out/artifacts/CalculateTiTv/CalculateTiTv.jar "/user/hadoop-bam/in/HG00173.unmapped.ILLUMINA.bwa.FIN.low_coverage.20120522.bam" "/user/hadoop-bam/out"
 /Applications/hadoop-1.1.2/bin/hadoop fs -copyToLocal /user/hadoop-bam/out* .
 
 
 
 
-/Applications/hadoop-1.1.2/bin/hadoop jar /Users/sibonli/IdeaProjects/Hadoop-Genomic-Analysis-Package/out/artifacts/CalculateTiTv.jar -libjars "/Users/sibonli/IdeaProjects/CRC-Hadoop/lib/picard-1.76.jar,/Users/sibonli/IdeaProjects/CRC-Hadoop/lib/sam-1.76.jar,/Users/sibonli/IdeaProjects/CRC-Hadoop/lib/hadoop-bam-5.1.jar" "/user/hadoop-bam/in/HG00173.unmapped.ILLUMINA.bwa.FIN.low_coverage.20120522.bam" "/user/hadoop-bam/out"
+/Applications/hadoop-1.1.2/bin/hadoop jar /Users/sibonli/IdeaProjects/Hadoop-Genomic-Analysis-Package/out/artifacts/CalculateTiTv.jar -libjars "/Users/sibonli/IdeaProjects/Hadoop-Genomic-Analysis-Package/lib/picard-1.76.jar,/Users/sibonli/IdeaProjects/Hadoop-Genomic-Analysis-Package/lib/sam-1.76.jar,/Users/sibonli/IdeaProjects/Hadoop-Genomic-Analysis-Package/lib/hadoop-bam-5.1.jar" "/user/hadoop-bam/in/HG00173.unmapped.ILLUMINA.bwa.FIN.low_coverage.20120522.bam" "/user/hadoop-bam/out"
 
 #This works for SimpleBamOperation:
 /Applications/hadoop-1.1.2/bin/hadoop jar /Users/sibonli/IdeaProjects/Hadoop-Genomic-Analysis-Package/out/artifacts/CalculateTiTv/CalculateTiTv.jar "/user/hadoop-bam/in/HG00173.unmapped.ILLUMINA.bwa.FIN.low_coverage.20120522.bam" "/user/hadoop-bam/out"
