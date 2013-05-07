@@ -14,6 +14,7 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
+import org.apache.hadoop.util.GenericOptionsParser;
 
 import java.io.IOException;
 
@@ -35,12 +36,12 @@ public class CalculateAlleleFrequency {
     public static class Map extends Mapper<LongWritable, Text, Text, IntWritable> {
         private final static IntWritable one = new IntWritable(1);
         private Text word = new Text();
-        private static SNPQualityController qc = SNPQualityController.getInstance(); // temp
+        private static SNPQualityController qc = SNPQualityController.getInstance();
 
         public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
             qc.addCriteria(new FilterTextQualityCriteria());
 
-            String line = value.toString();
+            String line = value.toString();  // filters all except PASS
             if(!line.startsWith("#")) {
                 String[] split = line.split("\t");
                 if(split.length > 1 && qc.checkQuality(split)) {
@@ -65,6 +66,20 @@ public class CalculateAlleleFrequency {
     }
 
     public static void main(String[] args) throws Exception {
+
+        final GenericOptionsParser parser;    // Handles parsing options such as -libjar
+        try {
+            parser = new GenericOptionsParser(args);
+
+        } catch (Exception e) {
+            System.err.printf("Error in Hadoop arguments: %s\n", e.getMessage());
+            System.exit(1);
+
+            // Hooray for javac
+            return;
+        }
+
+        args = parser.getRemainingArgs();
         Configuration conf = new Configuration();
 
         Job job = new Job(conf, "calculateallelefrequency");

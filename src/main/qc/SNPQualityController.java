@@ -50,7 +50,7 @@ public class SNPQualityController implements Iterable<QualityCriteria> {
     private static SNPQualityController instance;
 
     private SNPQualityController() {
-
+        criterion = new HashMap<String, QualityCriteria>();
     }
 
     public static SNPQualityController getInstance() {

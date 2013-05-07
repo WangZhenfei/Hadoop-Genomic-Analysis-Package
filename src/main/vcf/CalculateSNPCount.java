@@ -17,7 +17,6 @@ import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 import org.apache.hadoop.util.GenericOptionsParser;
 
 import java.io.IOException;
-import java.util.HashMap;
 
 /**
  * Created with IntelliJ IDEA.
@@ -27,31 +26,30 @@ import java.util.HashMap;
  *
  * @author Wai Lok Sibon Li
  *
- * Calculate the transition/transversion ratio between the genomes and the reference sequences
+ * Computes the count of the number of changes in allele from the reference sequence
  */
 
-public class CalculateTiTv {
 
 
+public class CalculateSNPCount {
 
     public static class Map extends Mapper<LongWritable, Text, Text, IntWritable> {
-
         private final static IntWritable one = new IntWritable(1);
         private Text word = new Text();
-        private static SNPQualityController qc = SNPQualityController.getInstance(); // temp
+        private static SNPQualityController qc = SNPQualityController.getInstance();
+        private static String COUNT = "count";
 
         public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-            qc.addCriteria(new FilterTextQualityCriteria());
+            qc.addCriteria(new FilterTextQualityCriteria());  // filters all except PASS
 
-            SubstitutionType.initializeBaseID();
             String line = value.toString();
             if(!line.startsWith("#")) {
                 String[] split = line.split("\t");
                 if(split.length > 1 && qc.checkQuality(split)) {
-                    System.out.print(line+"\t" + split.length);
-                    word.set(SubstitutionType.substitutionLookup(split[3], split[4]).name());
+//                    String positionID = split[0] + "_" + split[1];
+//                    word.set(positionID);
+                    word.set(COUNT);
                     context.write(word, one);
-
                 }
             }
         }
@@ -69,46 +67,8 @@ public class CalculateTiTv {
         }
     }
 
-    public enum SubstitutionType {
-        TRANSITION, TRANSVERSION, IDENTICAL;
-
-        protected static HashMap<String, Integer> baseID;
-        public static SubstitutionType substitutionLookup(String from, String to) {
-            try {
-                if(from.equals(to)) {
-                    return IDENTICAL;
-                }
-                return (transitionTable[baseID.get(from)][baseID.get(to)])?TRANSITION:TRANSVERSION;
-            }
-            catch(NullPointerException e) {
-                if(baseID == null) {
-                    initializeBaseID();
-                    return substitutionLookup(from, to);
-                }
-                else {
-                    e.printStackTrace();
-                }
-            }
-            return null;
-        }
-        private static void initializeBaseID() {
-            baseID = new HashMap<String, Integer>(4);
-            baseID.put("A", 0);
-            baseID.put("C", 1);
-            baseID.put("G", 2);
-            baseID.put("T", 3);
-        }
-
-        private final static boolean[][] transitionTable = {
-                {false, false, true, false},    // A
-                {false, false, false, true},    // C
-                {true, false, false, false},    // G
-                {false, true, false, false}     // T
-        };
-    }
-
-
     public static void main(String[] args) throws Exception {
+
 
         final GenericOptionsParser parser;    // Handles parsing options such as -libjar
         try {
@@ -123,10 +83,9 @@ public class CalculateTiTv {
         }
 
         args = parser.getRemainingArgs();
-
         Configuration conf = new Configuration();
 
-        Job job = new Job(conf, "calculatetransitiontransversion");
+        Job job = new Job(conf, "CalculateSNPCount");
 
         job.setJarByClass(CalculateAlleleFrequency.class); // Added this line in after. Works better now
 
