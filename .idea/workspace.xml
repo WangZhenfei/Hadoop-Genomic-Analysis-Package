@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e259befb-006e-44e9-b8fb-9d71a8367fe5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/misc/scripting/HadoopAnalysisBatchGenerator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/misc/scripting/StreamGobbler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/misc/scripting/HadoopAnalysisBatchGenerator.java" afterPath="$PROJECT_DIR$/src/misc/scripting/HadoopAnalysisBatchGenerator.java" />
     </list>
     <ignored path="Hadoop-Genomic-Analysis-Package.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -62,24 +61,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="README" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="1" selection-start="3699" selection-end="3699" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MergeHadoopResults.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/misc/scripting/MergeHadoopResults.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="66" selection-start="2070" selection-end="2070" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="hadoop-genomic-analysis-package.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hadoop-genomic-analysis-package.xml">
           <provider selected="true" editor-type-id="text-editor">
@@ -92,30 +73,59 @@
       <file leaf-file-name="CalculateTargetRegionSNPCount.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/vcf/CalculateTargetRegionSNPCount.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="129" column="27" selection-start="4820" selection-end="4820" vertical-scroll-proportion="0.0">
+            <state line="120" column="21" selection-start="4582" selection-end="4582" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sub_sample_BAMS.sh" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="sub_sample_BAMS.sh" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/misc/scripting/sub_sample_BAMS.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="27" selection-start="3798" selection-end="3798" vertical-scroll-proportion="0.8076923">
+            <state line="83" column="27" selection-start="3798" selection-end="3798" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HadoopAnalysisBatchGenerator.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="HadoopAnalysisBatchGenerator.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/misc/scripting/HadoopAnalysisBatchGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="77" column="32" selection-start="2352" selection-end="2352" vertical-scroll-proportion="-35.192307">
+            <state line="122" column="95" selection-start="4349" selection-end="4349" vertical-scroll-proportion="0.7468355">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1177#1185#0" expanded="true" />
-                <element signature="e#1602#1610#0" expanded="true" />
+                <element signature="e#1278#1286#0" expanded="true" />
+                <element signature="e#1703#1711#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CalculateNovelSNPCount.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/vcf/CalculateNovelSNPCount.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="73" column="21" selection-start="2627" selection-end="2627" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="commands.txt" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/misc/scripting/commands.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="19" selection-start="36" selection-end="36" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header_commands.txt" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/misc/scripting/header_commands.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="10" selection-start="10" selection-end="10" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -160,9 +170,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/hadoop-genomic-analysis-package.xml" />
-        <option value="$PROJECT_DIR$/src/main/vcf/CalculateTargetRegionSNPCount.java" />
-        <option value="$PROJECT_DIR$/src/misc/HadoopResultMerge.java" />
         <option value="$PROJECT_DIR$/src/misc/MergeHadoopResult.java" />
         <option value="$PROJECT_DIR$/src/misc/MergeHadoopResults.java" />
         <option value="$PROJECT_DIR$/src/friday_meeting_analysis_05_02_13.sh" />
@@ -174,8 +181,11 @@
         <option value="$PROJECT_DIR$/src/misc/scripting/file_list.txt" />
         <option value="$PROJECT_DIR$/src/misc/scripting/GenerateHadoopAnalysis.java" />
         <option value="$PROJECT_DIR$/src/misc/scripting/HadoopAnalysisScriptFactory.java" />
-        <option value="$PROJECT_DIR$/src/misc/scripting/HadoopAnalysisBatchGenerator.java" />
         <option value="$PROJECT_DIR$/src/misc/scripting/sub_sample_BAMS.sh" />
+        <option value="$PROJECT_DIR$/src/misc/scripting/commands.txt" />
+        <option value="$PROJECT_DIR$/src/misc/scripting/header_commands.txt" />
+        <option value="$PROJECT_DIR$/src/main/vcf/CalculateNovelSNPCount.java" />
+        <option value="$PROJECT_DIR$/src/misc/scripting/HadoopAnalysisBatchGenerator.java" />
       </list>
     </option>
   </component>
@@ -378,6 +388,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hadoop-Genomic-Analysis-Package" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hadoop-Genomic-Analysis-Package" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane">
@@ -402,6 +426,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="recentsLimit" value="5" />
     <property name="GenerateAntBuildDialog.generateSingleFile" value="false" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="options.lastSelected" value="Template Data Languages" />
@@ -425,7 +450,35 @@
       <recent name="$PROJECT_DIR$/src/misc/scripting" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.HadoopAnalysisBatchGenerator">
+    <configuration default="false" name="HadoopAnalysisBatchGenerator" type="Application" factoryName="Application" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="misc.scripting.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="misc.scripting.HadoopAnalysisBatchGenerator" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Hadoop-Genomic-Analysis-Package" />
+      <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
@@ -546,7 +599,9 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
-    <list size="0" />
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Application.HadoopAnalysisBatchGenerator" />
+    </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
       <Port>5050</Port>
@@ -589,34 +644,38 @@
       <created>1367956082042</created>
       <updated>1367956082042</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added a scripting tool for my pipeline">
+      <created>1368489775097</created>
+      <updated>1368489775097</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1366" height="673" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962063" sideWeight="0.672" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24962063" sideWeight="0.6286232" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893" sideWeight="0.49784482" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962063" sideWeight="0.5072" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3713768" sideWeight="0.49712643" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962063" sideWeight="0.4944" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26100153" sideWeight="0.6286232" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26100153" sideWeight="0.6286232" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3713768" sideWeight="0.49712643" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -658,7 +717,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added new analyses and improved old ones (some files are mostly duplicates can probably partition this better). Working build file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a scripting tool for my pipeline" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -674,6 +733,7 @@
     <MESSAGE value="Committing build file and IntelliJ project files" />
     <MESSAGE value="Edited to include changes to project name" />
     <MESSAGE value="Added new analyses and improved old ones (some files are mostly duplicates can probably partition this better). Working build file" />
+    <MESSAGE value="Added a scripting tool for my pipeline" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -692,16 +752,6 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/bam/SimpleBamOperation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="8" selection-start="829" selection-end="1225" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/vcf/CalculateAlleleFrequency.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="41" selection-start="2773" selection-end="2773" vertical-scroll-proportion="-15.115385" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/vcf/CalculateTiTv.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="124" column="41" selection-start="4195" selection-end="4195" vertical-scroll-proportion="-12.5" />
@@ -710,11 +760,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/vcf/CalculateSNPCount.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="84" column="41" selection-start="2862" selection-end="2862" vertical-scroll-proportion="-13.653846" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/vcf/CalculateNovelSNPCount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="41" selection-start="2907" selection-end="2907" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README">
@@ -730,11 +775,6 @@
     <entry file="file://$PROJECT_DIR$/hadoop-genomic-analysis-package.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="253" column="59" selection-start="12225" selection-end="12225" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/vcf/CalculateTargetRegionSNPCount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="129" column="27" selection-start="4820" selection-end="4820" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="jar:///System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar!/java/io/File.class">
@@ -770,21 +810,51 @@
         <state line="914" column="150" selection-start="205020" selection-end="205020" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/misc/scripting/HadoopAnalysisBatchGenerator.java">
+    <entry file="file://$PROJECT_DIR$/src/misc/scripting/sub_sample_BAMS.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="32" selection-start="2352" selection-end="2352" vertical-scroll-proportion="-35.192307">
+        <state line="83" column="27" selection-start="3798" selection-end="3798" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/misc/scripting/header_commands.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="10" selection-start="10" selection-end="10" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/vcf/CalculateTargetRegionSNPCount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="120" column="21" selection-start="4582" selection-end="4582" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/vcf/CalculateNovelSNPCount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="21" selection-start="2627" selection-end="2627" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1177#1185#0" expanded="true" />
-            <element signature="e#1602#1610#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/misc/scripting/sub_sample_BAMS.sh">
+    <entry file="file://$PROJECT_DIR$/src/misc/scripting/commands.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="27" selection-start="3798" selection-end="3798" vertical-scroll-proportion="0.8076923">
+        <state line="1" column="19" selection-start="36" selection-end="36" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/misc/scripting/HadoopAnalysisBatchGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="122" column="95" selection-start="4349" selection-end="4349" vertical-scroll-proportion="0.7468355">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1278#1286#0" expanded="true" />
+            <element signature="e#1703#1711#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

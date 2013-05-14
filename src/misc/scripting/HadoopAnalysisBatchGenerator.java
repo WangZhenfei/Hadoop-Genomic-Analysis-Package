@@ -9,6 +9,8 @@ import java.util.Map;
  * Date: 5/13/13
  * Time: 12:36 PM
  *
+ * java -classpath CalculateTiTv.jar misc.scripting.HadoopAnalysisBatchGenerator
+ *
  * @author Wai Lok Sibon Li
  */
 public class HadoopAnalysisBatchGenerator {
@@ -33,7 +35,7 @@ public class HadoopAnalysisBatchGenerator {
             fileNameList=args[2];
         }catch(Exception e) {}
 
-        String headerCommand = null;
+        String headerCommand = "header_commands.txt";
         try {
             templateFileName=args[3];
         }catch(Exception e) {}
@@ -73,8 +75,9 @@ public class HadoopAnalysisBatchGenerator {
             PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(outfile)), true);
 
             String line;
-            if(headerCommand != null) {
-                BufferedReader headerFileReader = new BufferedReader(new FileReader(headerCommand));
+            File headerFile = new File(headerCommand);
+            if(headerFile.exists()) {
+                BufferedReader headerFileReader = new BufferedReader(new FileReader(headerFile));
                 while((line = headerFileReader.readLine())!=null) {
                     pw.println(line);
                 }
@@ -85,7 +88,14 @@ public class HadoopAnalysisBatchGenerator {
 
             for(int i=0; i<filesList.size(); i++) {
                 for(int j=0; j<templateLines.size(); j++) {
-                    pw.println(templateLines.get(j).replaceAll(fileNameIdentifier, filesList.get(i)));
+                    StringBuilder s2 = new StringBuilder(templateLines.get(j));
+                    int index2;
+                    while((index2=s2.indexOf(fileNameIdentifier))!=-1) {
+                        s2.replace(index2, index2+fileNameIdentifier.length(), filesList.get(i));
+                        //s2.replace(index2, index2+fileNameIdentifier.length(), geneName);
+                    }
+                    pw.println(s2);
+                    System.out.println("hit it " + i + "\t" + j);
                 }
             }
             boolean isExecutable = outfile.setExecutable(true);
@@ -104,7 +114,7 @@ public class HadoopAnalysisBatchGenerator {
             //System.out.println(command);
 
 //            ProcessBuilder pb = new ProcessBuilder(inputFile, "myArg1", "myArg2");
-            ProcessBuilder pb = new ProcessBuilder(inputFile);
+            ProcessBuilder pb = new ProcessBuilder("/bin/bash", inputFile);
             Map<String, String> env = pb.environment();
 
             Process p = pb.start();
