@@ -20,10 +20,16 @@ import java.io.IOException;
  *
  * @author Wai Lok Sibon Li
  */
-public class VCFInputFormat extends FileInputFormat<LongWritable,SAMRecordWritable> {
+public class VCFInputFormat extends FileInputFormat<LongWritable,VCFRecord> {
+
 
     @Override
-    public RecordReader<LongWritable, SAMRecordWritable> createRecordReader(InputSplit split, TaskAttemptContext context) throws IOException, InterruptedException {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    public RecordReader<LongWritable, VCFRecord> createRecordReader(InputSplit split, TaskAttemptContext context) throws IOException, InterruptedException {
+//        return new RecordReader<LongWritable, SAMRecordWritable>() {
+        return new VCFRecordReader();
     }
+
+
+
 }
+

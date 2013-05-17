@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e259befb-006e-44e9-b8fb-9d71a8367fe5" name="Default" comment="Added another">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/vcf/FindSNPReadCoverage.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/vcf/VCFInputFormat.java" />
+    <list default="true" id="e259befb-006e-44e9-b8fb-9d71a8367fe5" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/vcf/VCFRecord.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/vcf/VCFRecordReader.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/vcf/VCFSettings.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README" afterPath="$PROJECT_DIR$/README" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/vcf/CalculateNovelSNPCount.java" afterPath="$PROJECT_DIR$/src/main/vcf/CalculateNovelSNPCount.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/vcf/VCFInputFormat.java" afterPath="$PROJECT_DIR$/src/main/vcf/VCFInputFormat.java" />
     </list>
     <ignored path="Hadoop-Genomic-Analysis-Package.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,33 +64,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="commands.txt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/misc/scripting/commands.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="30" selection-start="461" selection-end="461" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="header_commands.txt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/misc/scripting/header_commands.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="99" selection-start="991" selection-end="991" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="friday_meeting_analysis_05_02_13.sh" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/friday_meeting_analysis_05_02_13.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="37" selection-start="1133" selection-end="123518" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="thursday_meeting_analysis_05_14_13.sh" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/thursday_meeting_analysis_05_14_13.sh">
           <provider selected="true" editor-type-id="text-editor">
@@ -112,7 +85,7 @@
       <file leaf-file-name="VCFInputFormat.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/vcf/VCFInputFormat.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="106" selection-start="675" selection-end="675" vertical-scroll-proportion="0.0">
+            <state line="19" column="19" selection-start="678" selection-end="678" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -120,28 +93,63 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CalculateNovelSNPCount.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="NLinesRecordReader.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tutorial/sample/NLinesRecordReader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="54" column="59" selection-start="1555" selection-end="1555" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NLinesInputFormat.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tutorial/sample/NLinesInputFormat.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="90" selection-start="547" selection-end="547" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VCFRecordReader.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/vcf/VCFRecordReader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="19" selection-start="582" selection-end="582" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VCFSettings.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/vcf/VCFSettings.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="57" selection-start="151" selection-end="151" vertical-scroll-proportion="0.23305085">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VCFRecord.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/vcf/VCFRecord.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="35" selection-start="321" selection-end="321" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CalculateNovelSNPCount.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/vcf/CalculateNovelSNPCount.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="90" selection-start="1867" selection-end="1867" vertical-scroll-proportion="0.4989605">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CalculateSNPCount.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/vcf/CalculateSNPCount.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="0" selection-start="1001" selection-end="3538" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CalculateTiTv.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/vcf/CalculateTiTv.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="124" column="41" selection-start="4195" selection-end="4195" vertical-scroll-proportion="0.0">
+            <state line="64" column="66" selection-start="2378" selection-end="2378" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -169,11 +177,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/misc/scripting/CreateHadoopCommands.java" />
-        <option value="$PROJECT_DIR$/src/misc/scripting/GenerateHadoopCommands.java" />
-        <option value="$PROJECT_DIR$/src/misc/scripting/file_list.txt" />
-        <option value="$PROJECT_DIR$/src/misc/scripting/GenerateHadoopAnalysis.java" />
-        <option value="$PROJECT_DIR$/src/misc/scripting/HadoopAnalysisScriptFactory.java" />
         <option value="$PROJECT_DIR$/src/misc/scripting/sub_sample_BAMS.sh" />
         <option value="$PROJECT_DIR$/src/misc/scripting/HadoopAnalysisBatchGenerator.java" />
         <option value="$PROJECT_DIR$/src/misc/scripting/header_commands.txt" />
@@ -184,14 +187,19 @@
         <option value="$PROJECT_DIR$/src/misc/scripting/MergeHadoopResults.java" />
         <option value="$PROJECT_DIR$/src/main/vcf/FindSNPReadCoverage.java" />
         <option value="$PROJECT_DIR$/src/thursday_meeting_analysis_05_14_13.sh" />
+        <option value="$PROJECT_DIR$/src/tutorial/sample/NLinesRecordReader.java" />
+        <option value="$PROJECT_DIR$/src/tutorial/sample/NLinesInputFormat.java" />
         <option value="$PROJECT_DIR$/src/main/vcf/VCFInputFormat.java" />
+        <option value="$PROJECT_DIR$/src/main/vcf/VCFRecordReader.java" />
+        <option value="$PROJECT_DIR$/src/main/vcf/VCFSettings.java" />
+        <option value="$PROJECT_DIR$/src/main/vcf/VCFRecord.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
-    <option name="width" value="1366" />
-    <option name="height" value="673" />
+    <option name="width" value="1440" />
+    <option name="height" value="878" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -250,6 +258,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hadoop-Genomic-Analysis-Package" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hadoop-Genomic-Analysis-Package" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tutorial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sample" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hadoop-Genomic-Analysis-Package" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hadoop-Genomic-Analysis-Package" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tutorial" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -413,6 +461,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/misc/scripting" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="main.vcf" />
     </key>
   </component>
   <component name="RunManager" selected="Application.HadoopAnalysisBatchGenerator">
@@ -617,17 +668,22 @@
       <created>1368492398495</created>
       <updated>1368492398495</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added SNP read coverage calculation. Modified CalculateNovelSNPCount to use 1000genomes instead of dbSNP (can be changed with one line)">
+      <created>1368755090266</created>
+      <updated>1368755090266</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1366" height="673" extended-state="0" />
+    <frame x="0" y="22" width="1440" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24927954" sideWeight="0.6288998" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -635,16 +691,15 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962063" sideWeight="0.5072" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36956522" sideWeight="0.49712643" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962063" sideWeight="0.4944" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2336874" sideWeight="0.6288998" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22126436" sideWeight="0.67107004" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37110016" sideWeight="0.49712643" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -686,7 +741,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug fixes for the aforementioned script" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added SNP read coverage calculation. Modified CalculateNovelSNPCount to use 1000genomes instead of dbSNP (can be changed with one line)" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -704,6 +759,7 @@
     <MESSAGE value="Added new analyses and improved old ones (some files are mostly duplicates can probably partition this better). Working build file" />
     <MESSAGE value="Added a scripting tool for my pipeline" />
     <MESSAGE value="Bug fixes for the aforementioned script" />
+    <MESSAGE value="Added SNP read coverage calculation. Modified CalculateNovelSNPCount to use 1000genomes instead of dbSNP (can be changed with one line)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -722,36 +778,6 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/vcf/CalculateTargetRegionSNPCount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="120" column="21" selection-start="4582" selection-end="4582" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/misc/scripting/file_list.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="36" selection-start="479" selection-end="479" vertical-scroll-proportion="0.43659043" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hadoop-genomic-analysis-package.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="253" column="59" selection-start="12225" selection-end="12225" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/misc/scripting/sub_sample_BAMS.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="27" selection-start="3798" selection-end="3798" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/misc/scripting/HadoopAnalysisBatchGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="30" selection-start="197" selection-end="197" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/misc/scripting/MergeHadoopResults.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="79" selection-start="723" selection-end="723" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/misc/scripting/commands.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="30" selection-start="461" selection-end="461" vertical-scroll-proportion="0.0" />
@@ -798,18 +824,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/vcf/VCFInputFormat.java">
+    <entry file="file://$PROJECT_DIR$/src/main/vcf/CalculateNovelSNPCount.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="106" selection-start="675" selection-end="675" vertical-scroll-proportion="0.0">
+        <state line="64" column="66" selection-start="2378" selection-end="2378" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/hadoop-1.1.2/src/mapred/org/apache/hadoop/mapreduce/RecordReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="45" selection-start="1086" selection-end="1086" vertical-scroll-proportion="0.2542373">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tutorial/sample/NLinesRecordReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="59" selection-start="1555" selection-end="1555" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/vcf/CalculateNovelSNPCount.java">
+    <entry file="file://$PROJECT_DIR$/src/tutorial/sample/NLinesInputFormat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="90" selection-start="1867" selection-end="1867" vertical-scroll-proportion="0.4989605">
+        <state line="15" column="90" selection-start="547" selection-end="547" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/vcf/VCFRecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="35" selection-start="321" selection-end="321" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/vcf/VCFInputFormat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="19" selection-start="678" selection-end="678" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/vcf/VCFRecordReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="19" selection-start="582" selection-end="582" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/vcf/VCFSettings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="57" selection-start="151" selection-end="151" vertical-scroll-proportion="0.23305085">
           <folding />
         </state>
       </provider>
