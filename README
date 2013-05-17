@@ -27,6 +27,8 @@ Restart the machine
 /Applications/hadoop-1.1.2/bin/hadoop fs -put ~/Downloads/test2.txt /user/in
 
 
+/Applications/hadoop-1.1.2/bin/hadoop fs -ls
+
 
 #/Applications/hadoop-1.1.2/bin/hadoop fs -put /Volumes/NO\ NAME/vcf_GWASeq/RD-16165.SNPs_Annotated.vcf /user/in
 /Applications/hadoop-1.1.2/bin/hadoop fs -rmr /user/out    # Have to delete after every run

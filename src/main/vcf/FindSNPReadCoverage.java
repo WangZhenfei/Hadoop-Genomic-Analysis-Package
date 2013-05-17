@@ -20,23 +20,17 @@ import java.io.IOException;
 
 /**
  * Created with IntelliJ IDEA.
- * User: sibonli
- * Date: 4/17/13
- * Time: 5:37 PM
+ * Date: 5/15/13
+ * Time: 12:44 PM
  *
  * @author Wai Lok Sibon Li
- *
- * Computes the count of the number of changes in allele from the reference sequence
  */
+public class FindSNPReadCoverage {
 
-
-
-public class CalculateNovelSNPCount {
-
-    public static class Map extends Mapper<LongWritable, Text, Text, IntWritable> {
+    public static class Map extends Mapper<LongWritable, Text, IntWritable, IntWritable> {
         private final static IntWritable one = new IntWritable(1);
-        private Text word = new Text();
-        private static SNPQualityController qc = SNPQualityController.getInstance(); // temp
+//        private Text word = new Text();
+        private static SNPQualityController qc = SNPQualityController.getInstance();
         private static String COUNT = "count";
 
         public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
@@ -45,22 +39,37 @@ public class CalculateNovelSNPCount {
             String line = value.toString();
             if(!line.startsWith("#")) {
                 String[] split = line.split("\t");
-//                if(split.length > 1 && qc.checkQuality(split) && split[7].indexOf("RSID=.")>=0) {
-                if(split.length > 1 && qc.checkQuality(split) && split[7].indexOf("TMAF=.;")>=0) {
-
-
-//                    String positionID = split[0] + "_" + split[1];
+                if(split.length > 1 && qc.checkQuality(split)) {
+                    String positionID = split[0] + "_" + split[1];
 //                    word.set(positionID);
-                    word.set(COUNT);
-                    context.write(word, one);
+//                    word.set(COUNT);
+                    int coverage;
+                    String[] innerSplit = split[9].split(":");
+                    if(split[8].indexOf("GT:VR:RR:DP:GQ")==0) {
+                        coverage = Integer.parseInt(innerSplit[3]);
+                    }
+                    else {
+                        int dpIndex = -1;
+                        String[] nameSplits = split[8].split(":");
+                        findIndex: for(int i=0; i<nameSplits.length;i++) {
+                            if(nameSplits[i].equals("DR")) {
+                                dpIndex = i;
+                                break findIndex;
+                            }
+                        }
+                        coverage = Integer.parseInt(innerSplit[dpIndex]);
+                    }
+                    IntWritable coverageWritable = new IntWritable(coverage);
+//                    context.write(word, coverageWritable);
+                    context.write(coverageWritable, one);
                 }
             }
         }
     }
 
-    public static class Reduce extends Reducer<Text, IntWritable, Text, IntWritable> {
+    public static class Reduce extends Reducer<IntWritable, IntWritable, IntWritable, IntWritable> {
 
-        public void reduce(Text key, Iterable<IntWritable> values, Context context)
+        public void reduce(IntWritable key, Iterable<IntWritable> values, Context context)
                 throws IOException, InterruptedException {
             int sum = 0;
             for (IntWritable val : values) {
@@ -71,6 +80,7 @@ public class CalculateNovelSNPCount {
     }
 
     public static void main(String[] args) throws Exception {
+
 
         final GenericOptionsParser parser;    // Handles parsing options such as -libjar
         try {
@@ -87,11 +97,11 @@ public class CalculateNovelSNPCount {
         args = parser.getRemainingArgs();
         Configuration conf = new Configuration();
 
-        Job job = new Job(conf, "CalculateNovelSNPCount");
+        Job job = new Job(conf, "FindSNPReadCoverage");
 
         job.setJarByClass(CalculateAlleleFrequency.class); // Added this line in after. Works better now
 
-        job.setOutputKeyClass(Text.class);
+        job.setOutputKeyClass(IntWritable.class);
         job.setOutputValueClass(IntWritable.class);
 
         job.setMapperClass(Map.class);
@@ -105,5 +115,4 @@ public class CalculateNovelSNPCount {
 
         job.waitForCompletion(true);
     }
-
 }
