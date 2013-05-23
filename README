@@ -34,7 +34,7 @@ Restart the machine
 /Applications/hadoop-1.1.2/bin/hadoop fs -rmr /user/out    # Have to delete after every run
 # Takes all the files in the folder as a collective. If want to analyze file by file, then specific the file in input
 #/Applications/hadoop-1.1.2/bin/hadoop jar /Users/sibonli/IdeaProjects/Hadoop-Genomic-Analysis-Package/out/artifacts/CalculateTiTv/CalculateTiTv.jar "/user/in" "/user/out"
-/Applications/hadoop-1.1.2/bin/hadoop jar /Users/sibonli/IdeaProjects/Hadoop-Genomic-Analysis-Package/out/artifacts/CalculateTiTv/CalculateTiTv.jar main.vcf.CalculateSNPCount /user/in /user/out
+/Applications/hadoop-1.1.2/bin/hadoop jar /Users/sibonli/IdeaProjects/Hadoop-Genomic-Analysis-Package/out/artifacts/CalculateTiTv/CalculateTiTv.jar main.vcf.tools.CalculateSNPCount /user/in /user/out
 /Applications/hadoop-1.1.2/bin/hadoop fs -copyToLocal /user/out/* .
 vi part-r-00000
 

@@ -1,9 +1,11 @@
 <component name="libraryTable">
-  <library name="lib">
+  <library name="hadoop-bam-5.1">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/lib/picard-1.76.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/hadoop-bam-5.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/picard-1.76.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/sam-1.76.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/variant-1.91.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/tribble-1.91.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -1,4 +1,4 @@
-package main.vcf;
+package main.vcf.tools;
 
 import main.qc.FilterTextQualityCriteria;
 import main.qc.SNPQualityController;
@@ -20,17 +20,23 @@ import java.io.IOException;
 
 /**
  * Created with IntelliJ IDEA.
- * Date: 5/15/13
- * Time: 12:44 PM
+ * User: sibonli
+ * Date: 4/17/13
+ * Time: 5:37 PM
  *
  * @author Wai Lok Sibon Li
+ *
+ * Computes the count of the number of changes in allele from the reference sequence
  */
-public class FindSNPReadCoverage {
 
-    public static class Map extends Mapper<LongWritable, Text, IntWritable, IntWritable> {
+
+
+public class CalculateNovelSNPCount {
+
+    public static class Map extends Mapper<LongWritable, Text, Text, IntWritable> {
         private final static IntWritable one = new IntWritable(1);
-//        private Text word = new Text();
-        private static SNPQualityController qc = SNPQualityController.getInstance();
+        private Text word = new Text();
+        private static SNPQualityController qc = SNPQualityController.getInstance(); // temp
         private static String COUNT = "count";
 
         public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
@@ -39,37 +45,22 @@ public class FindSNPReadCoverage {
             String line = value.toString();
             if(!line.startsWith("#")) {
                 String[] split = line.split("\t");
-                if(split.length > 1 && qc.checkQuality(split)) {
-                    String positionID = split[0] + "_" + split[1];
+//                if(split.length > 1 && qc.checkQuality(split) && split[7].indexOf("RSID=.")>=0) {
+                if(split.length > 1 && qc.checkQuality(split) && split[7].indexOf("TMAF=.;")>=0) {
+
+
+//                    String positionID = split[0] + "_" + split[1];
 //                    word.set(positionID);
-//                    word.set(COUNT);
-                    int coverage;
-                    String[] innerSplit = split[9].split(":");
-                    if(split[8].indexOf("GT:VR:RR:DP:GQ")==0) {
-                        coverage = Integer.parseInt(innerSplit[3]);
-                    }
-                    else {
-                        int dpIndex = -1;
-                        String[] nameSplits = split[8].split(":");
-                        findIndex: for(int i=0; i<nameSplits.length;i++) {
-                            if(nameSplits[i].equals("DR")) {
-                                dpIndex = i;
-                                break findIndex;
-                            }
-                        }
-                        coverage = Integer.parseInt(innerSplit[dpIndex]);
-                    }
-                    IntWritable coverageWritable = new IntWritable(coverage);
-//                    context.write(word, coverageWritable);
-                    context.write(coverageWritable, one);
+                    word.set(COUNT);
+                    context.write(word, one);
                 }
             }
         }
     }
 
-    public static class Reduce extends Reducer<IntWritable, IntWritable, IntWritable, IntWritable> {
+    public static class Reduce extends Reducer<Text, IntWritable, Text, IntWritable> {
 
-        public void reduce(IntWritable key, Iterable<IntWritable> values, Context context)
+        public void reduce(Text key, Iterable<IntWritable> values, Context context)
                 throws IOException, InterruptedException {
             int sum = 0;
             for (IntWritable val : values) {
@@ -80,7 +71,6 @@ public class FindSNPReadCoverage {
     }
 
     public static void main(String[] args) throws Exception {
-
 
         final GenericOptionsParser parser;    // Handles parsing options such as -libjar
         try {
@@ -97,11 +87,11 @@ public class FindSNPReadCoverage {
         args = parser.getRemainingArgs();
         Configuration conf = new Configuration();
 
-        Job job = new Job(conf, "FindSNPReadCoverage");
+        Job job = new Job(conf, "CalculateNovelSNPCount");
 
         job.setJarByClass(CalculateAlleleFrequency.class); // Added this line in after. Works better now
 
-        job.setOutputKeyClass(IntWritable.class);
+        job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(IntWritable.class);
 
         job.setMapperClass(Map.class);
@@ -115,4 +105,5 @@ public class FindSNPReadCoverage {
 
         job.waitForCompletion(true);
     }
+
 }

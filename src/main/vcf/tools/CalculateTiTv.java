@@ -1,4 +1,4 @@
-package main.vcf;
+package main.vcf.tools;
 
 import main.qc.FilterTextQualityCriteria;
 import main.qc.SNPQualityController;

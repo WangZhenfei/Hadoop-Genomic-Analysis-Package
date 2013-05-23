@@ -250,9 +250,11 @@
             <!--<zipfileset -->
             <manifest>
                 <!--<attribute name="Main-Class" value="main.bam.SimpleBamOperation" />-->
-                <!--<attribute name="Main-Class" value="main.vcf.CalculateNovelSNPCount" />-->
+                <!--<attribute name="Main-Class" value="main.vcf.tools.CalculateNovelSNPCount" />-->
             </manifest>
             <zipgroupfileset dir="${lib}" includes="hadoop-bam-5.1.jar"/>
+            <zipgroupfileset dir="${lib}" includes="tribble-1.91.jar"/>
+            <zipgroupfileset dir="${lib}" includes="variant-1.91.jar"/>
             <!--<zipgroupfileset dir="/Users/sibonli/IdeaProjects/Hadoop-Genomic-Analysis-Package/lib" includes="hadoop-bam-5.1.jar"/>-->
         </jar>
         <copy file="${temp.jar.path.CalculateTiTv.jar}" tofile="${artifact.temp.output.calculatetitv}/CalculateTiTv.jar"/>

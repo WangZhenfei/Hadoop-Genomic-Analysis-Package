@@ -16,9 +16,11 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="lib" level="project" />
     <orderEntry type="library" name="hadoop-1.1" level="project" />
     <orderEntry type="library" name="bin" level="project" />
+    <orderEntry type="library" name="lib1" level="project" />
+    <orderEntry type="library" name="hadoop-bam-5.1" level="project" />
+    <orderEntry type="library" name="lib" level="application" />
   </component>
 </module>
 

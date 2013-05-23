@@ -1,8 +1,11 @@
-package main.vcf;
+package main.vcf.formats;
 
-import fi.tkk.ics.hadoop.bam.SAMRecordWritable;
+import org.apache.hadoop.fs.FileSystem;
+import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.LongWritable;
+import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.InputSplit;
+import org.apache.hadoop.mapreduce.JobContext;
 import org.apache.hadoop.mapreduce.RecordReader;
 import org.apache.hadoop.mapreduce.TaskAttemptContext;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
@@ -20,15 +23,23 @@ import java.io.IOException;
  *
  * @author Wai Lok Sibon Li
  */
-public class VCFInputFormat extends FileInputFormat<LongWritable,VCFRecord> {
+public class VCFInputFormat extends FileInputFormat<Text,VCFRecordWritable> {
 
 
     @Override
-    public RecordReader<LongWritable, VCFRecord> createRecordReader(InputSplit split, TaskAttemptContext context) throws IOException, InterruptedException {
+    public RecordReader<Text, VCFRecordWritable> createRecordReader(InputSplit split, TaskAttemptContext context) throws IOException, InterruptedException {
 //        return new RecordReader<LongWritable, SAMRecordWritable>() {
         return new VCFRecordReader();
     }
 
+    /*
+     * Set to not splittable because the VCF content is highly dependent on the info in the header.
+     * Plus it's usually under 64MB anyways.
+     */
+    @Override
+    protected boolean isSplitable(JobContext context, Path filename) {
+        return false;
+    }
 
 
 }

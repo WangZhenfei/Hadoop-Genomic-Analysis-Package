@@ -1,4 +1,4 @@
-package main.vcf;
+package main.vcf.tools;
 
 import main.qc.FilterTextQualityCriteria;
 import main.qc.SNPQualityController;
@@ -31,12 +31,12 @@ import java.io.IOException;
 
 
 
-public class CalculateNovelSNPCount {
+public class CalculateSNPCount {
 
     public static class Map extends Mapper<LongWritable, Text, Text, IntWritable> {
         private final static IntWritable one = new IntWritable(1);
         private Text word = new Text();
-        private static SNPQualityController qc = SNPQualityController.getInstance(); // temp
+        private static SNPQualityController qc = SNPQualityController.getInstance();
         private static String COUNT = "count";
 
         public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
@@ -45,10 +45,7 @@ public class CalculateNovelSNPCount {
             String line = value.toString();
             if(!line.startsWith("#")) {
                 String[] split = line.split("\t");
-//                if(split.length > 1 && qc.checkQuality(split) && split[7].indexOf("RSID=.")>=0) {
-                if(split.length > 1 && qc.checkQuality(split) && split[7].indexOf("TMAF=.;")>=0) {
-
-
+                if(split.length > 1 && qc.checkQuality(split)) {
 //                    String positionID = split[0] + "_" + split[1];
 //                    word.set(positionID);
                     word.set(COUNT);
@@ -72,6 +69,7 @@ public class CalculateNovelSNPCount {
 
     public static void main(String[] args) throws Exception {
 
+
         final GenericOptionsParser parser;    // Handles parsing options such as -libjar
         try {
             parser = new GenericOptionsParser(args);
@@ -87,7 +85,7 @@ public class CalculateNovelSNPCount {
         args = parser.getRemainingArgs();
         Configuration conf = new Configuration();
 
-        Job job = new Job(conf, "CalculateNovelSNPCount");
+        Job job = new Job(conf, "CalculateSNPCount");
 
         job.setJarByClass(CalculateAlleleFrequency.class); // Added this line in after. Works better now
 
