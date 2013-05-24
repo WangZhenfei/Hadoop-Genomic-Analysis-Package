@@ -9,7 +9,7 @@ import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
-import org.apache.hadoop.mapred.FileSplit;
+import org.apache.hadoop.mapreduce.lib.input.FileSplit;
 import org.apache.hadoop.mapreduce.InputSplit;
 import org.apache.hadoop.mapreduce.RecordReader;
 import org.apache.hadoop.mapreduce.TaskAttemptContext;
@@ -19,6 +19,8 @@ import org.broadinstitute.variant.variantcontext.VariantContext;
 import org.broadinstitute.variant.vcf.VCFCodec;
 import org.broadinstitute.variant.vcf.VCFHeader;
 
+import javax.sound.midi.SysexMessage;
+import java.io.EOFException;
 import java.io.IOException;
 
 /**
@@ -35,7 +37,7 @@ class VCFRecordReader extends RecordReader<Text, VCFRecordWritable> {
 //    private LineReader in;
     private Text key;
     private VCFRecordWritable value;
-    private int maxLineLength;
+//    private int maxLineLength;
     private long start;
     private long end;
     private long pos;
@@ -58,16 +60,26 @@ class VCFRecordReader extends RecordReader<Text, VCFRecordWritable> {
     @Override
     public void initialize(InputSplit inputSplit, TaskAttemptContext context) throws IOException, InterruptedException {
 
+        key = new Text();
+        value = new VCFRecordWritable();
         FileSplit fileSplit = (FileSplit) inputSplit;
         final Path file = fileSplit.getPath();
+        System.out.println("path " + file.getName());
         FileSystem fs = file.getFileSystem(context.getConfiguration());
 //        FSDataInputStream filein = fs.open(fileSplit.getPath());
-        FSDataInputStream in = fs.open(file);
-        reader = new AsciiLineReader(new DataInputWrapper(in));
+        FSDataInputStream filein = fs.open(file);
+        reader = new AsciiLineReader(filein);
 //        if(codec==null) {
         codec = new VCFCodec();
         header = (VCFHeader) codec.readHeader(reader);
 
+        String line;
+        while((line = reader.readLine()) != null) {
+            System.out.println("Chur? : " + line);
+        }
+//        for(int i = 0; i<10; i++) {
+//            reader.readLine();
+//        }
 //            VCFHeader header  = (VCFHeader) codec.readHeader(reader);
 //        }
 //        Configuration conf = context.getConfiguration();
@@ -77,7 +89,9 @@ class VCFRecordReader extends RecordReader<Text, VCFRecordWritable> {
         end= start + fileSplit.getLength();
         boolean skipFirstLine = false;
 
-        in.seek(start);
+
+
+//        filein.seek(start);
         if (start != 0){
 //            skipFirstLine = true;
 //            --start;
@@ -104,60 +118,38 @@ class VCFRecordReader extends RecordReader<Text, VCFRecordWritable> {
 
     @Override
     public boolean nextKeyValue() throws IOException, InterruptedException {
-//        if (!recordReader.nextKeyValue()) {
-//            return false;
-//        }
-//        if(key==null) {
-//            return false;
-//        }
         String line = reader.readLine();
+        System.out.println("1z " + line);
+        while(line!=null && line.startsWith(VCFHeader.HEADER_INDICATOR)) {
+            System.out.println("bang! ");
+            System.out.println("2z " + line);
+            line = reader.readLine();
+            pos++;
+        }
         if(line == null) {
             return false;
         }
 
-        pos++;
         VariantContext record = codec.decode(line);
-        key.set(record.getChr() + "_" + record.getStart() + "_" + record.getID());
+
+//        key.set(record.getChr() + "_" + record.getStart() + "_" + record.getID());
+//        System.out.println("right way to do wrong " + header.toString());
+        System.out.println("3z " + line);
+//        if(record == null ) {
+//            System.out.println("I can't stand to see " + line);
+//        }
+//        else if(record.getChr()==null) {
+//            System.out.println("you");
+//        }
+//        else if(key==null) {
+//            System.out.println("cry");
+//        }
+//        key = new Text(record.getChr() + "_" + record.getStart());
+//        value = new VCFRecordWritable();
+        key.set(record.getChr() + "_" + record.getStart());
 //        getCurrentValue().setRecord(record);
         value.setRecord(record);
         return true;
-
-
-
-//        if (key == null) {
-//            key = new LongWritable();
-//        }
-//        key.set(pos);
-//        if (value == null) {
-//            value = new Text();
-//        }
-//        value.clear();
-//        final Text endline = new Text("\n");
-//        int newSize = 0;
-//        for(int i=0;i<NLINESTOPROCESS;i++){
-//            Text v = new Text();
-//            while (pos < end) {
-//                newSize = in.readLine(v, maxLineLength,Math.max((int)Math.min(Integer.MAX_VALUE, end-pos),maxLineLength));
-//                value.append(v.getBytes(),0, v.getLength());
-//                value.append(endline.getBytes(),0, endline.getLength());
-//                if (newSize == 0) {
-//                    break;
-//                }
-//                pos += newSize;
-//                if (newSize < maxLineLength) {
-//                    break;
-//                }
-//            }
-//        }
-//        if (newSize == 0) {
-//            key = null;
-//            value = null;
-//            return false;
-//        } else {
-//            return true;
-//        }
-
-//        return false;
     }
 
 
