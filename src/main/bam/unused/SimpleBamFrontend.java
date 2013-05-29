@@ -1,4 +1,4 @@
-package main.bam;
+package main.bam.unused;
 
 /**
  * Created with IntelliJ IDEA.

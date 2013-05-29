@@ -39,6 +39,7 @@ public class VCFRecordWritable implements Writable {
     @Override
     public void write(DataOutput out) throws IOException {
 //        PrintWriter pw = new PrintWriter(new DataOutputWrapper(out));
+        System.out.println("WRITE!!!");
         if(!isHeaderWritten) {
             out.writeChars(header.toString());
             isHeaderWritten = true;
@@ -47,10 +48,13 @@ public class VCFRecordWritable implements Writable {
         for(VariantContext r : records) {
             out.writeChars(r.toString());
         }
+//        throw new RuntimeException("VCFRECORDWRITABLE.WRITE IS CRASHING YA");
     }
 
     @Override
     public void readFields(DataInput in) throws IOException {
+        System.out.println("READFIELDS!!!");
+
 //        File f = new File(fileName);
 //        AsciiLineReader reader = new AsciiLineReader(IoUtil.openFileForReading(f));
 //        DataInputStream dis = new DataInputStream(in);
@@ -72,5 +76,6 @@ public class VCFRecordWritable implements Writable {
             records.add(codec.decode(line));
 //
         }
+//        throw new RuntimeException("VCFRECORDWRITABLE.READ IS CRASHING YA");
     }
 }

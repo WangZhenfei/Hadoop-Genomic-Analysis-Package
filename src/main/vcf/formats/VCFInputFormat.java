@@ -4,6 +4,7 @@ import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapred.*;
 import org.apache.hadoop.mapreduce.InputSplit;
 import org.apache.hadoop.mapreduce.JobContext;
 import org.apache.hadoop.mapreduce.RecordReader;
@@ -26,11 +27,20 @@ import java.io.IOException;
 public class VCFInputFormat extends FileInputFormat<Text,VCFRecordWritable> {
 
 
-    @Override
+
+
+
+//    @Override
+//    public  RecordReader<Text, VCFRecordWritable> getRecordReader(InputSplit split, JobConf job, Reporter reporter) {
+//
+//    }
     public RecordReader<Text, VCFRecordWritable> createRecordReader(InputSplit split, TaskAttemptContext context) throws IOException, InterruptedException {
 //        return new RecordReader<LongWritable, SAMRecordWritable>() {
         return new VCFRecordReader();
+//        return new VCFRecordReader(split, context);
     }
+
+
 
     /*
      * Set to not splittable because the VCF content is highly dependent on the info in the header.
@@ -41,6 +51,15 @@ public class VCFInputFormat extends FileInputFormat<Text,VCFRecordWritable> {
         return false;
     }
 
-
+//
+//    @Override
+//    protected boolean isSplitable(FileSystem fs, Path filename) {
+//        return false;
+//    }
+//
+//    @Override
+//    public RecordReader<Text, VCFRecordWritable> getRecordReader(InputSplit split, JobConf job, Reporter reporter) throws IOException {
+//        return new VCFRecordReader((FileSplit) split, job);  //To change body of implemented methods use File | Settings | File Templates.
+//    }
 }
 

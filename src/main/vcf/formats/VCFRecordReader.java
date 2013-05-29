@@ -3,12 +3,16 @@ package main.vcf.formats;
 
 import fi.tkk.ics.hadoop.bam.SAMRecordWritable;
 import fi.tkk.ics.hadoop.bam.util.DataInputWrapper;
+import net.sf.picard.io.IoUtil;
+import net.sf.samtools.util.IOUtil;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FSDataInputStream;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
+//import org.apache.hadoop.mapred.FileSplit;
+//import org.apache.hadoop.mapred.RecordReader;
 import org.apache.hadoop.mapreduce.lib.input.FileSplit;
 import org.apache.hadoop.mapreduce.InputSplit;
 import org.apache.hadoop.mapreduce.RecordReader;
@@ -20,7 +24,9 @@ import org.broadinstitute.variant.vcf.VCFCodec;
 import org.broadinstitute.variant.vcf.VCFHeader;
 
 import javax.sound.midi.SysexMessage;
+import java.io.BufferedReader;
 import java.io.EOFException;
+import java.io.FileReader;
 import java.io.IOException;
 
 /**
@@ -34,6 +40,50 @@ import java.io.IOException;
  *
  */
 class VCFRecordReader extends RecordReader<Text, VCFRecordWritable> {
+
+//    private FileSplit fileSplit;
+//    private Configuration conf;
+//    private boolean processed = false;
+//
+//    @Override
+//    public boolean next(Text key, VCFRecordWritable value) throws IOException {
+//        return false;  //To change body of implemented methods use File | Settings | File Templates.
+//    }
+//
+//    @Override
+//    public Text createKey() {
+//        return null;  //To change body of implemented methods use File | Settings | File Templates.
+//    }
+//
+//    @Override
+//    public VCFRecordWritable createValue() {
+//        return null;  //To change body of implemented methods use File | Settings | File Templates.
+//    }
+//
+//    @Override
+//    public long getPos() throws IOException {
+//        return 0;  //To change body of implemented methods use File | Settings | File Templates.
+//    }
+//
+//    @Override
+//    public void close() throws IOException {
+//        //To change body of implemented methods use File | Settings | File Templates.
+//    }
+//
+//    @Override
+//    public float getProgress() throws IOException {
+//        return 0;  //To change body of implemented methods use File | Settings | File Templates.
+//    }
+//}
+
+
+
+
+
+
+
+
+
 //    private LineReader in;
     private Text key;
     private VCFRecordWritable value;
@@ -46,7 +96,10 @@ class VCFRecordReader extends RecordReader<Text, VCFRecordWritable> {
 
     VCFCodec codec;
     VCFHeader header;
-    AsciiLineReader reader;
+    HadoopAsciiLineReader reader;
+
+    FileSplit fileSplit;
+
 
 //    RecordReader<LongWritable, VCFRecordWritable> recordReader;
 
@@ -59,27 +112,48 @@ class VCFRecordReader extends RecordReader<Text, VCFRecordWritable> {
 
     @Override
     public void initialize(InputSplit inputSplit, TaskAttemptContext context) throws IOException, InterruptedException {
-
         key = new Text();
         value = new VCFRecordWritable();
-        FileSplit fileSplit = (FileSplit) inputSplit;
+        fileSplit = (FileSplit) inputSplit;
         final Path file = fileSplit.getPath();
-        System.out.println("path " + file.getName());
         FileSystem fs = file.getFileSystem(context.getConfiguration());
 //        FSDataInputStream filein = fs.open(fileSplit.getPath());
         FSDataInputStream filein = fs.open(file);
-        reader = new AsciiLineReader(filein);
-//        if(codec==null) {
-        codec = new VCFCodec();
-        header = (VCFHeader) codec.readHeader(reader);
 
-        String line;
-        while((line = reader.readLine()) != null) {
-            System.out.println("Chur? : " + line);
-        }
-//        for(int i = 0; i<10; i++) {
-//            reader.readLine();
+
+        filein.seek(start);
+        LineReader lr = new LineReader(filein);
+
+//        Text line = new Text();
+//        int num;
+//        while((num = lr.readLine(line)) > 0) {
+//            System.out.println(line.toString());
 //        }
+
+//        reader = new AsciiLineReader(filein);
+
+//        String line;
+//        char c;
+        reader = new HadoopAsciiLineReader(lr);
+//        reader.printFully();
+        System.out.println("where");
+        codec = new VCFCodec();
+
+//        String line;
+//        while((line=reader.readLine()) != null) {
+//            System.out.println(line);
+//        }
+
+        header = (VCFHeader) codec.readHeader(reader);
+//        int num;
+        System.out.println("here");
+        String l;
+        while((l = reader.readLine()) != null) {
+            System.out.println(l);
+        }
+        System.out.println("present");
+
+
 //            VCFHeader header  = (VCFHeader) codec.readHeader(reader);
 //        }
 //        Configuration conf = context.getConfiguration();
@@ -91,7 +165,6 @@ class VCFRecordReader extends RecordReader<Text, VCFRecordWritable> {
 
 
 
-//        filein.seek(start);
         if (start != 0){
 //            skipFirstLine = true;
 //            --start;
@@ -107,6 +180,7 @@ class VCFRecordReader extends RecordReader<Text, VCFRecordWritable> {
     @Override
     public float getProgress() throws IOException, InterruptedException {
 //        return recordReader.getProgress();
+//        return 0.0f;
         if (start == end) {
             return 0.0f;
         }
@@ -121,7 +195,6 @@ class VCFRecordReader extends RecordReader<Text, VCFRecordWritable> {
         String line = reader.readLine();
         System.out.println("1z " + line);
         while(line!=null && line.startsWith(VCFHeader.HEADER_INDICATOR)) {
-            System.out.println("bang! ");
             System.out.println("2z " + line);
             line = reader.readLine();
             pos++;
@@ -132,22 +205,8 @@ class VCFRecordReader extends RecordReader<Text, VCFRecordWritable> {
 
         VariantContext record = codec.decode(line);
 
-//        key.set(record.getChr() + "_" + record.getStart() + "_" + record.getID());
-//        System.out.println("right way to do wrong " + header.toString());
         System.out.println("3z " + line);
-//        if(record == null ) {
-//            System.out.println("I can't stand to see " + line);
-//        }
-//        else if(record.getChr()==null) {
-//            System.out.println("you");
-//        }
-//        else if(key==null) {
-//            System.out.println("cry");
-//        }
-//        key = new Text(record.getChr() + "_" + record.getStart());
-//        value = new VCFRecordWritable();
         key.set(record.getChr() + "_" + record.getStart());
-//        getCurrentValue().setRecord(record);
         value.setRecord(record);
         return true;
     }
@@ -172,6 +231,7 @@ class VCFRecordReader extends RecordReader<Text, VCFRecordWritable> {
 
     @Override
     public void close() throws IOException {
+//        filein.close();
         reader.close();
 //        recordReader.close();
 //        if (in != null) {

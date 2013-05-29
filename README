@@ -15,9 +15,10 @@ Restart the machine
 /Applications/hadoop-1.1.2/bin/hadoop namenode -format
 /Applications/hadoop-1.1.2/bin/start-all.sh
 
+/Applications/hadoop-1.1.2/bin/hadoop dfsadmin -safemode leave
 
 /Applications/hadoop-1.1.2/bin/hadoop job -list
-/Applications/hadoop-1.1.2/bin/hadoop job -kill job_201304181659_0021
+/Applications/hadoop-1.1.2/bin/hadoop job -kill job_201305281353_0001
 
 /Applications/hadoop-1.1.2/bin/hadoop fs -mkdir /user/in
 /Applications/hadoop-1.1.2/bin/hadoop fs -ls /user/in
