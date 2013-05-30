@@ -1,6 +1,5 @@
-package main.splicing;
+package main.knowngene;
 
-import main.qc.FilterTextQualityCriteria;
 import main.qc.SNPQualityController;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
@@ -65,11 +64,10 @@ public class CategorizeSiteByKnownGenes {
 
         public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
 
+            KnownGeneAnnotation knownGeneAnnotation = new KnownGeneAnnotation(value.toString());  // filters all except PASS
 
 
-            qc.addCriteria(new FilterTextQualityCriteria());
-
-            String line = value.toString();  // filters all except PASS
+            String line = value.toString();
             if(!line.startsWith("#")) {
                 String[] split = line.split("\t");
                 if(split.length > 1 && qc.checkQuality(split)) {

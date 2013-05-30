@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e259befb-006e-44e9-b8fb-9d71a8367fe5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/splicing/CategorizeSiteByKnownGenes.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/splicing/KnownGeneAnnotation.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/vcf/formats/HadoopAsciiLineReader.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/bam/SimpleBamFrontend.java" afterPath="$PROJECT_DIR$/src/main/bam/unused/SimpleBamFrontend.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/bam/SimpleBamReader.java" afterPath="$PROJECT_DIR$/src/main/bam/unused/SimpleBamReader.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/bam/SimpleBamReader2.java" afterPath="$PROJECT_DIR$/src/main/bam/unused/SimpleBamReader2.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/knowngene/GenicGenomeRegion.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/knowngene/GenomeRegion.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/knowngene/KnownGeneAnnotation.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/splicing/CategorizeSiteByKnownGenes.java" afterPath="$PROJECT_DIR$/src/main/knowngene/CategorizeSiteByKnownGenes.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/splicing/KnownGeneAnnotation.java" afterPath="$PROJECT_DIR$/src/main/knowngene/KnownGeneReferences.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README" afterPath="$PROJECT_DIR$/README" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/vcf/formats/VCFInputFormat.java" afterPath="$PROJECT_DIR$/src/main/vcf/formats/VCFInputFormat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/vcf/formats/VCFRecordReader.java" afterPath="$PROJECT_DIR$/src/main/vcf/formats/VCFRecordReader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/vcf/formats/VCFRecordWritable.java" afterPath="$PROJECT_DIR$/src/main/vcf/formats/VCFRecordWritable.java" />
     </list>
     <ignored path="Hadoop-Genomic-Analysis-Package.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -70,33 +65,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="HadoopAsciiLineReader.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/vcf/formats/HadoopAsciiLineReader.java">
+      <file leaf-file-name="CategorizeSiteByKnownGenes.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/knowngene/CategorizeSiteByKnownGenes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="163" column="98" selection-start="5042" selection-end="5042" vertical-scroll-proportion="0.0">
+            <state line="69" column="43" selection-start="2626" selection-end="2626" vertical-scroll-proportion="-9.307693">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CategorizeSiteByKnownGenes.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/splicing/CategorizeSiteByKnownGenes.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="80" column="54" selection-start="2985" selection-end="2985" vertical-scroll-proportion="0.79134464">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VCFRecordWritable.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/vcf/formats/VCFRecordWritable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="47" selection-start="2432" selection-end="2432" vertical-scroll-proportion="0.0">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -113,10 +88,48 @@
         </entry>
       </file>
       <file leaf-file-name="KnownGeneAnnotation.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/splicing/KnownGeneAnnotation.java">
+        <entry file="file://$PROJECT_DIR$/src/main/knowngene/KnownGeneAnnotation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="32" selection-start="161" selection-end="161" vertical-scroll-proportion="0.0">
+            <state line="27" column="6" selection-start="695" selection-end="695" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GenomeRegion.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/knowngene/GenomeRegion.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="48" selection-start="201" selection-end="201" vertical-scroll-proportion="9.807693">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="thursday_meeting_analysis_05_14_13.sh" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/thursday_meeting_analysis_05_14_13.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="9" selection-start="1536" selection-end="1536" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GenicGenomeRegion.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/knowngene/GenicGenomeRegion.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="30" column="35" selection-start="953" selection-end="953" vertical-scroll-proportion="0.6686478">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KnownGeneReferences.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/knowngene/KnownGeneReferences.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="3" selection-start="641" selection-end="641" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -132,30 +145,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SimpleBamReader2.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/bam/unused/SimpleBamReader2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#0#24701#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SimpleBamOperation.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/bam/SimpleBamOperation.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="54" column="32" selection-start="1805" selection-end="1805" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SimpleBamFrontend.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/bam/unused/SimpleBamFrontend.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="19" selection-start="1919" selection-end="1919" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -181,14 +174,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/vcf/VCFSettings.java" />
-        <option value="$PROJECT_DIR$/src/main/vcf/VCFRecordWritable.java" />
-        <option value="$PROJECT_DIR$/src/main/vcf/formats/VCFOutputFormat.java" />
-        <option value="$PROJECT_DIR$/src/misc/scripting/VCFReaderTest.java" />
-        <option value="$PROJECT_DIR$/src/main/vcf/tools/CalculateAlleleFrequency.java" />
-        <option value="$PROJECT_DIR$/src/main/qc/SNPQualityController.java" />
-        <option value="$PROJECT_DIR$/src/main/vcf/tools/CalculateTargetRegionSNPCount.java" />
-        <option value="$PROJECT_DIR$/src/main/vcf/formats/VCFRecordWritable.java" />
         <option value="$PROJECT_DIR$/src/main/vcf/formats/VCFInputFormat.java" />
         <option value="$PROJECT_DIR$/README" />
         <option value="$PROJECT_DIR$/src/main/vcf/tools/CalculateAlleleFrequencyVcfFormat.java" />
@@ -197,6 +182,14 @@
         <option value="$PROJECT_DIR$/src/main/bam/SimpleBamReader.java" />
         <option value="$PROJECT_DIR$/src/main/bam/unused/SimpleBamFrontend.java" />
         <option value="$PROJECT_DIR$/src/main/splicing/CategorizeSiteByKnownGenes.java" />
+        <option value="$PROJECT_DIR$/src/main/splicing/KnownGeneAnnotation.java" />
+        <option value="$PROJECT_DIR$/src/main/splicing/Region.java" />
+        <option value="$PROJECT_DIR$/src/main/splicing/GeneRegion.java" />
+        <option value="$PROJECT_DIR$/src/main/knowngene/CategorizeSiteByKnownGenes.java" />
+        <option value="$PROJECT_DIR$/src/main/knowngene/KnownGeneReferences.java" />
+        <option value="$PROJECT_DIR$/src/main/knowngene/GeneRegion.java" />
+        <option value="$PROJECT_DIR$/src/main/knowngene/GenomeRegion.java" />
+        <option value="$PROJECT_DIR$/src/main/knowngene/GenicGenomeRegion.java" />
       </list>
     </option>
   </component>
@@ -410,7 +403,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="splicing" />
+              <option name="myItemId" value="qc" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -432,8 +425,34 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="qc" />
+              <option name="myItemId" value="knowngene" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hadoop-Genomic-Analysis-Package" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hadoop-Genomic-Analysis-Package" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="knowngene" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KnownGeneAnnotation.java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -782,7 +801,11 @@
       <created>1369359168605</created>
       <updated>1369359168605</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Bug not fixed, FSDataInputStream still behaves unpredictably, but making progress on genome parititioning">
+      <created>1369858778047</created>
+      <updated>1369858778047</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -793,23 +816,23 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928678" sideWeight="0.6322464" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32628798" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20977011" sideWeight="0.85507244" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893" sideWeight="0.49784482" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962063" sideWeight="0.5072" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297414" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14398943" sideWeight="0.98491377" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962063" sideWeight="0.4944" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35632184" sideWeight="0.6336" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35632184" sideWeight="0.673712" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32628798" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14492753" sideWeight="0.98491377" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -851,7 +874,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Think I've fixed the VCFRecordReader..." />
+    <option name="LAST_COMMIT_MESSAGE" value="Bug not fixed, FSDataInputStream still behaves unpredictably, but making progress on genome parititioning" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -873,6 +896,7 @@
     <MESSAGE value="Skeleton for VCFInputFormat" />
     <MESSAGE value="Completed classes required for VCFInputFormat (probably buggy)" />
     <MESSAGE value="Think I've fixed the VCFRecordReader..." />
+    <MESSAGE value="Bug not fixed, FSDataInputStream still behaves unpredictably, but making progress on genome parititioning" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -891,35 +915,6 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///Applications/hadoop-1.1.2/src/core/org/apache/hadoop/util/LineReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="185" column="13" selection-start="6879" selection-end="6879" vertical-scroll-proportion="3.8076923" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/misc/scripting/VCFReaderTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="93" selection-start="1002" selection-end="1002" vertical-scroll-proportion="0.26153848" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/vcf/formats/VCFRecordReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="149" column="66" selection-start="4461" selection-end="4510" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/variant-1.91.jar!/org/broadinstitute/variant/vcf/AbstractVCFCodec.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="47" selection-start="1582" selection-end="1592" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/tribble-1.91.jar!/org/broad/tribble/readers/LineReader.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="33" selection-start="122" selection-end="147" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="0" selection-start="828" selection-end="897" vertical-scroll-proportion="0.0">
@@ -968,13 +963,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/splicing/KnownGeneAnnotation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="32" selection-start="161" selection-end="161" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Applications/hadoop-1.1.2/src/mapred/org/apache/hadoop/mapreduce/Mapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="94" column="13" selection-start="3886" selection-end="3886" vertical-scroll-proportion="0.33236152">
@@ -998,12 +986,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/splicing/CategorizeSiteByKnownGenes.java">
+    <entry file="file://$USER_HOME$/Dropbox/Applications/PhdRandomScripts/(buggy)CodonTest/DetermineGeneRegions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="54" selection-start="2985" selection-end="2985" vertical-scroll-proportion="0.79134464">
+        <state line="44" column="36" selection-start="1362" selection-end="1367" vertical-scroll-proportion="-8.269231">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/knowngene/CategorizeSiteByKnownGenes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="43" selection-start="2626" selection-end="2626" vertical-scroll-proportion="-9.307693">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/knowngene/KnownGeneReferences.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="3" selection-start="641" selection-end="641" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/knowngene/KnownGeneAnnotation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="6" selection-start="695" selection-end="695" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/thursday_meeting_analysis_05_14_13.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="9" selection-start="1536" selection-end="1536" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/knowngene/GenomeRegion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="48" selection-start="201" selection-end="201" vertical-scroll-proportion="9.807693">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/knowngene/GenicGenomeRegion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="35" selection-start="953" selection-end="953" vertical-scroll-proportion="0.6686478">
+          <folding />
         </state>
       </provider>
     </entry>
