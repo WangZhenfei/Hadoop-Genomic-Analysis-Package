@@ -1,4 +1,4 @@
-package main.knowngene;
+package main.generegions;
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,11 +13,7 @@ package main.knowngene;
  * 06-09-2006
  */
 
-import java.util.*;
-import java.io.*;
-
-@Deprecated
-public class KnownGeneReferences implements Comparable<KnownGeneReferences> {
+public class GeneAnnotations implements Comparable<GeneAnnotations> {
     private String ucscID;
     private String mRNAID;
     private String swissProtAcc;
@@ -27,7 +23,7 @@ public class KnownGeneReferences implements Comparable<KnownGeneReferences> {
     private String ncbiAcc;
     private String description;
 
-    public KnownGeneReferences (String ucscID, String mRNAID, String swissProtAcc, String swissProtID, String geneSymbol, String refSeqID, String ncbiAcc, String description) {
+    public GeneAnnotations(String ucscID, String mRNAID, String swissProtAcc, String swissProtID, String geneSymbol, String refSeqID, String ncbiAcc, String description) {
         this.ucscID = ucscID;
         this.mRNAID = mRNAID;
         this.swissProtAcc = swissProtAcc;
@@ -39,10 +35,9 @@ public class KnownGeneReferences implements Comparable<KnownGeneReferences> {
     }
 
     /* Constructor that takes in a line from the kgXref.txt file and splits it up */
-    public KnownGeneReferences (String line) {
+    public GeneAnnotations(String line) {
 
         String[] split = line.split("\\t");
-        //System.out.println(split[7]);
         ucscID = split[0];
         mRNAID = split[1];
         swissProtAcc = split[2];
@@ -54,7 +49,7 @@ public class KnownGeneReferences implements Comparable<KnownGeneReferences> {
     }
 
 
-    public int compareTo(KnownGeneReferences kgr) {
+    public int compareTo(GeneAnnotations kgr) {
         return getRefSeqID().compareTo(kgr.getRefSeqID());
     }
 

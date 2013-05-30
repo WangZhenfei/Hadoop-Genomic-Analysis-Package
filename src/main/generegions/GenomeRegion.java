@@ -1,4 +1,4 @@
-package main.knowngene;
+package main.generegions;
 
 /**
  * A region object that stores the positions, gene names etc. of a genome.
@@ -18,8 +18,6 @@ public class GenomeRegion implements Comparable<GenomeRegion> {
         this.start = start;
         this.end = end;
         this.type = type;
-        this.direction = direction;
-        this.geneName = geneName;
         length = end-start;
     }
 

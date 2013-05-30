@@ -1,4 +1,4 @@
-package main.knowngene;
+package main.generegions;
 
 import main.qc.SNPQualityController;
 import org.apache.hadoop.conf.Configuration;
@@ -64,18 +64,18 @@ public class CategorizeSiteByKnownGenes {
 
         public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
 
-            KnownGeneAnnotation knownGeneAnnotation = new KnownGeneAnnotation(value.toString());  // filters all except PASS
+            GenicGenomeRegion gene = GenicGenomeRegion.parseKGString(value.toString());  // filters all except PASS
 
 
-            String line = value.toString();
-            if(!line.startsWith("#")) {
-                String[] split = line.split("\t");
-                if(split.length > 1 && qc.checkQuality(split)) {
-                    String positionID = split[0] + "_" + split[1];
-                    word.set(positionID);
-                    context.write(one, word);
-                }
-            }
+//            String line = value.toString();
+//            if(!line.startsWith("#")) {
+//                String[] split = line.split("\t");
+//                if(split.length > 1 && qc.checkQuality(split)) {
+//                    String positionID = split[0] + "_" + split[1];
+//                    word.set(positionID);
+//                    context.write(one, word);
+//                }
+//            }
         }
     }
 
